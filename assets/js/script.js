@@ -16,7 +16,5 @@ function color() {
             $('.time-block').addClass("past");
     }
 };
-saveBtn.on("click", function(){
-    
-})
+
 color ();
