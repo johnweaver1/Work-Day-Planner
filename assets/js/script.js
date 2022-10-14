@@ -6,15 +6,18 @@ $("#currentDay").text(time);
 function color() {
     // variable for setting the hour
     var hour = moment().hours();
-    var hours = [8,9,10,11,12,13,14,15,16,17];    
-    // setting if else statemtns for the color!
-    if (hours > hour) {
-            $('.time-block').addClass("future");
-    } else if (hours === hour) {
-            $('.time-block').addClass("present");
-    } else {
-            $('.time-block').addClass("past");
-    }
+    //this function creates a varibale called hTime that is checked through the .time-block class and the id which is given a number!
+    $(".time-block").each(function() {
+        var idNum = parseInt($(this).attr("id"));
+        //the function is now checked against the current hour vs the id number which creates the colors!
+        if (idNum > hour) {
+           $(this).addClass("future");
+        } else if (idNum === hour) {
+           $(this).addClass("present");
+        } else {
+           $(this).addClass("past");
+        }
+    })
 };
 
 color ();
